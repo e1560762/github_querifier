@@ -1,0 +1,10 @@
+*.log
+*.txt
+bin/
+extras/
+include/
+lib/
+local/
+pip-selfcheck.json
+solution_for_github_task_yigit.zip
+*.pyc

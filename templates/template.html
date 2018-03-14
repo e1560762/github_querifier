@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Github Navigator</title>
+</head>
+<body>
+<h1>{{ search_term }}</h1>
+{% if total_count %}
+	{% for repo_info in repo_info_list %}
+		<h2>{{ repo_info['id'] }} {{ repo_info['repo_name'] }}</h2>
+		<h3> Created {{ repo_info['created_at'] }}</h3>
+		<a href="{{ repo_info['owner_url'] }}"><img src="{{ repo_info['owner_avatar_url'] }}" alt="avatar" height="42" width="42"/></a>
+		{{ repo_info['owner_login'] }}
+		<h3>LastCommit</h3>
+		{{ repo_info['sha'] }} {{ repo_info['commit_message'] }}  {{ repo_info['commit_author_name'] }}
+		<hr/>
+	{% endfor %}
+{% else %}
+<h2> {{ message }} </h2>
+{% endif %}
+</body>
+</html>
